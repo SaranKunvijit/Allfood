@@ -1,7 +1,8 @@
-import { ImagePlus, PencilLine, Pizza, Trash2 } from "lucide-react";
+import { Check, ImagePlus, PencilLine, Pizza, Trash2, X } from "lucide-react";
 import React, { useState, type FC } from "react";
 import "./TableComponent.css";
 import type { TableProps } from "../../types";
+import InputComponent from "../InputComponent/InputComponent";
 
 const TableComponent: FC<TableProps> = ({
   id,
@@ -10,28 +11,25 @@ const TableComponent: FC<TableProps> = ({
   onEdit,
   onDelete,
   onAddFood,
-  onDeleteCatagory
+  onDeleteCatagory,
 }) => {
-
   const [newImage, setNewImage] = useState("");
   const [adding, setAdding] = useState(false);
   const [newFoodName, setNewFoodName] = useState("");
   const [newPrice, setNewPrice] = useState("");
-  const [qtys, setQtys] = useState(0)
-
+  const [qtys, setQtys] = useState(0);
 
   const handleAddFood = () => setAdding(true);
   const handleSaveNewFood = () => {
     if (newFoodName.trim() && newPrice) {
-      onAddFood(newImage, newFoodName, Number(newPrice),title, qtys);
+      onAddFood(newImage, newFoodName, Number(newPrice), id, qtys);
       setAdding(false);
       setNewFoodName("");
       setNewPrice("");
-      setNewImage('');
-      setQtys(0)
+      setNewImage("");
+      setQtys(0);
     }
   };
-
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -45,11 +43,15 @@ const TableComponent: FC<TableProps> = ({
       <div className="table-headerlist">
         <h2>{title}</h2>
         <div className="add-removebtn">
-          <button onClick={handleAddFood}><Pizza />เพิ่มสินค้า</button>
-          <button className="remove-cat" onClick={() => onDeleteCatagory(id)}><Trash2 />ลบประเภทสินค้า</button>
+          <button onClick={handleAddFood}>
+            <Pizza />
+            เพิ่มสินค้า
+          </button>
+          <button className="remove-cat" onClick={() => onDeleteCatagory(id)}>
+            <Trash2 />
+            ลบประเภทสินค้า
+          </button>
         </div>
-
-
       </div>
 
       <div className="table-list">
@@ -68,7 +70,6 @@ const TableComponent: FC<TableProps> = ({
 
           <tbody>
             {foods.map((f, index) => (
-
               <tr key={f.id}>
                 <td>{index + 1}</td>
                 <td>
@@ -76,7 +77,7 @@ const TableComponent: FC<TableProps> = ({
                     src={f.image}
                     width={90}
                     height={90}
-                    style={{ borderRadius: "6px", objectFit:'cover' }}
+                    style={{ borderRadius: "6px", objectFit: "cover" }}
                     alt=""
                   />
                 </td>
@@ -113,12 +114,23 @@ const TableComponent: FC<TableProps> = ({
 
                       <div className="img-overlays">
                         {/* <button className="btn-change" onClick={() => document.getElementById("addImageUpload")?.click()}>เปลี่ยนรูป</button> */}
-                        <button className="btn-removes" onClick={() => setNewImage("")} >ลบรูป</button>
+                        <button
+                          className="btn-removes"
+                          onClick={() => setNewImage("")}
+                        >
+                          ลบรูป
+                        </button>
                       </div>
                     </div>
                   ) : (
                     <button
-                      onClick={() => document.getElementById("addImageUpload")?.click()}className="btn-editimage"><ImagePlus /></button>
+                      onClick={() =>
+                        document.getElementById("addImageUpload")?.click()
+                      }
+                      className="btn-editimage"
+                    >
+                      <ImagePlus />
+                    </button>
                   )}
 
                   <input
@@ -130,25 +142,37 @@ const TableComponent: FC<TableProps> = ({
                   />
                 </td>
 
-                <td>
-                  <input
-                    type="text"
+                <td colSpan={2}>
+                  <InputComponent
+                    labels="ชื่ออาหาร"
+                    requireds
+                    className=""
+                    inputed="text"
                     value={newFoodName}
                     onChange={(e) => setNewFoodName(e.target.value)}
                   />
+                  
                 </td>
-                <td>
-                  <input
-                    type="text"
+                <td colSpan={2}>
+                  <InputComponent
+                    labels="ราคา"
+                    requireds
+                    className=""
+                    inputed="text"
                     value={newPrice}
                     onChange={(e) => setNewPrice(e.target.value)}
                   />
+                 
                 </td>
 
                 <td>
-                  <div className="btn-can">
-                    <button onClick={handleSaveNewFood}>บันทึก</button>
-                    <button onClick={() => setAdding(false)}>ยกเลิก</button>
+                  <div className="btn-manage">
+                    <p onClick={handleSaveNewFood} className="check">
+                      <Check />
+                    </p>
+                    <p onClick={() => setAdding(false)} className="x">
+                      <X />
+                    </p>
                   </div>
                 </td>
               </tr>

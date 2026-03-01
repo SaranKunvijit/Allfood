@@ -1,13 +1,17 @@
-import type { ReactNode } from "react";
-import type React from "react";
 
+import type { InputHTMLAttributes, ReactNode } from "react";
+import type React from "react";
+export type TypeProps = {
+  id:number;
+  label:string
+}
 export type ItemsProps = {
   id: number;
   image: string;
   name: string;
   qty?: number;
   price: number;
-  type: string;
+  type: TypeProps;
 };
 export type Food = {
   id: number
@@ -47,6 +51,7 @@ export type CardComponentProps = {
 export type TableProps = {
   id: number;
   title: string;
+  category: TypeProps
   foods: ItemsProps[];
   onEdit: (food: ItemsProps) => void;
   onDelete: (id: number) => void;
@@ -54,8 +59,23 @@ export type TableProps = {
     image: string,
     name: string,
     price: number,
-    type: string,
+    type: number,
     qty: number
   ) => void;
   onDeleteCatagory: (id: number) => void;
 };
+
+
+export type DropDownProps = {
+  items:TypeProps[]
+  defaultLabel?: string
+  onSelect?:(value:number) => void
+  className: string
+}
+
+export type InputProps = {
+  labels: string
+  requireds:boolean
+  inputed: React.HTMLInputTypeAttribute
+  className: string
+} & InputHTMLAttributes<HTMLInputElement>

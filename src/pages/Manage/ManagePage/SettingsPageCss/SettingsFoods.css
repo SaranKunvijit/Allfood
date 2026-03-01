@@ -23,34 +23,16 @@
   align-items: center;
   gap: 20px;
 }
-
-.btn-createselect select {
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  border: 2px solid var(--text-color);
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.allfoodtype{
+  width: 140px;
 }
-
-.btn-createselect select:hover {
-  border-color: var(--bg-color);
-  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+.type-category {
+  width: 21rem;
+  margin: 20px 0;
 }
-
-.btn-createselect select:focus {
-  border-color: var(--bg-color);
-  box-shadow: 0px 0px 0px 4px rgba(0, 150, 255, 0.15);
+.new-food{
+  width: 21.5rem;
 }
-
-.btn-createselect select option {
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: white;
-  border-radius: 10px;
-}
-
 .btn-createselect button {
   background-color: var(--text-color);
   color: white;
@@ -108,22 +90,9 @@ h2 {
   gap: 1rem;
 }
 
-.edit-dialog input {
-  padding: 0.5rem 1rem;
-  margin-left: 15px;
-  border-radius: 10px;
-  font-size: 16px;
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
-}
 
-.edit-dialog input:focus {
-  outline: none;
-}
 
-.edit-dialog label {
-  font-size: 16px;
-}
+
 
 .img-wrapper {
   position: relative;

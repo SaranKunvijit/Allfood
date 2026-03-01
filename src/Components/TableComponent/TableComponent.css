@@ -53,18 +53,7 @@ h2 {
     font-weight: 500;
 }
 
-.table-list input {
-    width: 100%;
-    padding: 0.4rem 0.2rem;
-    font-size: 16px;
-    border: 1px solid var(--text-color);
-    border-radius: 8px;
-    color: var(--text-color);
-}
 
-.table-list input:focus {
-    outline: none;
-}
 
 .table-headerlist {
     display: flex;
@@ -94,29 +83,20 @@ h2 {
     transform: scale(0.95);
 }
 
-.btn-can {
+.btn-manage {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
 
 }
 
-.btn-can button {
-    background-color: var(--text-color);
+.btn-manage .check{
+    color: var(--hover-color);
 
-    color: white;
-    transition: all 0.3s ease;
-    box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.5);
 }
-
-.btn-can button:hover {
-    background-color: var(--bg-color);
-    transform: scale(1.05);
-}
-
-.btn-can button:active {
-    transform: scale(0.90);
+.btn-manage .x{
+    color: var(--hover-remove);
 }
 
 .btn-editimage {

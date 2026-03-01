@@ -7,6 +7,7 @@ import { useState, type FC } from "react";
 import CardComponent from "../../Components/CardComponent/CardComponent";
 import type { ItemsProps } from "../../types";
 
+
 type HomeProps = {
   handleAddCart: (menu: any, qty: number) => void;
 };
@@ -57,8 +58,12 @@ const Home: FC<HomeProps> = ({ handleAddCart }) => {
   }
   return (
     <div className="container">
-      <img src={slid} alt="background" className="img-head" />
+      <div className="head">
+        <img src={slid} alt="background" className="img-head" />
+      </div>
+     
       <div className="catagory-menu">
+         
         <h1 className="text-class">ประเภทอาหาร</h1>
         <div className="catagory-grid">
           {CatagoryMenu.map((catagory) => (

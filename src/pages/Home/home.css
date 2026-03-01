@@ -5,8 +5,11 @@
   flex-direction: column;
   /* align-items: center; */
 }
-
-.container .img-head {
+.head {
+  display: flex;
+  justify-content: center;
+}
+.img-head {
   width: 50vw;
   height: 60vh;
   object-fit: cover;
@@ -15,13 +18,15 @@
   z-index: 5;
   margin-top: 13%;
   border-radius: 10px;
-  margin-left: 28rem;
+
   box-shadow: 1px 8px 18px rgba(0, 0, 0, 0.9);
 }
 
 .recommend-menu,
 .best-sell {
-  margin: 0 6rem;
+  max-width: 1200px;
+  margin: 5rem auto 0 auto;
+  padding: 0 2rem;
   margin-top: 100px;
 }
 
@@ -36,6 +41,7 @@
 .text-rec h1,
 .text-best h1 {
   font-size: 2.5rem;
+  text-shadow: 1px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .text-rec p,
@@ -51,10 +57,11 @@
 }
 .headeres-card,
 .best-menu {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: center;
+
   padding: 2rem;
 }
 .catagory-menu {
@@ -118,7 +125,12 @@
   gap: 5rem;
   margin-top: 8rem;
   padding: 6rem;
-  background: linear-gradient(150deg, var(--text-color), var(--hover-color),var(--text-color));
+  background: linear-gradient(
+    150deg,
+    var(--text-color),
+    var(--hover-color),
+    var(--text-color)
+  );
   align-items: center;
 }
 .best-sells .img-sells img {
@@ -130,7 +142,7 @@
 
 .contact {
   display: flex;
-  padding: 3rem;
+  padding: 0 1.5rem;
   justify-content: space-between;
   background-color: var(--text-color);
   align-items: center;
@@ -152,4 +164,3 @@
 .con-res p:hover {
   text-decoration: underline;
 }
-

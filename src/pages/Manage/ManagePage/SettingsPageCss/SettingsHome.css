@@ -5,19 +5,19 @@
     margin-top: 30px;
     gap: 15px;
 }
-
-.text-recse input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1px solid var(--hover-color);
-    color: var(--text-color);
+.input-logo{
+    width: 200px;
 }
-
-.text-recse input:focus {
-    outline: none;
+.input-name, .input-price{
+    width: 90%;
 }
-
+.input-tabled{
+    margin: 0 30px;
+    width: 194px;
+}
+.all-table{
+    margin-left: 30px;
+}
 .texts-logo {
     margin: 3% 0;
     display: flex;
@@ -29,14 +29,7 @@
     margin: 0;
 }
 
-.texts-logo input {
-    padding: 0.5rem 1rem;
-    color: var(--text-color);
-    font-size: 16px;
-    border: 1px solid var(--hover-color);
-    border-radius: 10px;
-    width: 300px;
-}
+
 .inputs-table {
     display: flex;
     gap: 10px;
@@ -44,19 +37,13 @@
     padding: 2rem 0;
     justify-content: center;
 }
-.inputs-table input{
-    padding: 0.5rem 1rem;
-    color: var(--text-color);
-    font-size: 16px;
-    border: 1px solid var(--hover-color);
-    border-radius: 10px;
-    width: 200px;
-}
+
 .texts-logo input:focus,
 .inputs-table input:focus {
     outline: none;
 }
 .inputs-table button{
+    margin-top: 10px;
     display: flex;
     background-color: var(--text-color);
     color: white;

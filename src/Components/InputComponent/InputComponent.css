@@ -1,0 +1,47 @@
+.input-container {
+  width: 170px;
+}
+.input-header {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+.input-title {
+  position: absolute;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  padding: 0 15px;
+  margin: 2px 0;
+  border-radius: 10px;
+  border: 2px solid var(--text-color);
+  background: transparent;
+  line-height: 40px;
+  transition: 0.1s ease;
+  z-index: 1111;
+}
+.labelline {
+  position: absolute;
+  font-size: 14px;
+  color: var(--hover-color);
+
+  margin: 2px 16px;
+  background-color: white;
+  transition: 0.2s ease;
+}
+.input-title:focus,
+.input-title:valid {
+  color: var(--text-color);
+  border: 3px solid var(--hover-color);
+}
+
+.input-title:focus + .labelline,
+.input-title:valid + .labelline {
+  color: var(--hover-color);
+  margin: 0 12px;
+  padding: 0 3px;
+  height: 20px;
+  line-height: 6px;
+  transform: translate(2px, -1px) scale(0.88);
+  z-index: 1111;
+}
