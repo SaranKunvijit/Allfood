@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import { useState, type FC } from "react";
 import ImageUploads from "../../../Components/ImageUploads/ImageUploads";
 import "../ManagePage/SettingsPageCss/SettingsHome.css";
 import { Plus } from "lucide-react";
 import InputComponent from "../../../Components/InputComponent/InputComponent";
+import { NumTable } from "../../../Data/tableType";
 
 type SettingsProps = {
   tableTotal: number;
   setTableTotal: React.Dispatch<React.SetStateAction<number>>;
 };
-function SettingsHome({ tableTotal, setTableTotal }: SettingsProps) {
-  const [inputTables, setInputTables] = useState("");
-  const tables = Array.from({ length: tableTotal }, (_, i) => i + 1);
+export const  SettingsHome:FC<SettingsProps> = ({tableTotal, setTableTotal}) => {
+ 
+ 
+   const [inputTables, setInputTables] = useState(tableTotal.toString());
+  const tables = NumTable.slice(0, tableTotal)
+ // const tables = Array.from({ length: tableTotal }, (_, i) => i + 1);
 
   const handleSetTables = () => {
     const numbers = Number(inputTables);
@@ -81,15 +85,15 @@ function SettingsHome({ tableTotal, setTableTotal }: SettingsProps) {
         <div className="input-all">
           <div className="inputs-table">
             <InputComponent
-              labels="ราคาอาหาร"
+              labels="จำนวนโต๊ะ"
               inputed="text"
               requireds
               className="input-tabled"
               value={inputTables}
               onChange={(e) => setInputTables(e.target.value)}
-               min="0"
+              min="0"
             />
-            
+
             <button onClick={handleSetTables}>
               <Plus /> สร้าง
             </button>
@@ -106,13 +110,13 @@ function SettingsHome({ tableTotal, setTableTotal }: SettingsProps) {
       </div>
 
       <div className="btn-table">
-        {tables.map((id) => (
-          <div key={id} className="table-box">
+        {tables.map((table) => (
+          <div key={table.id} className="table-box">
             <button
               className="table-id"
-              onClick={() => console.log(`โต๊ะ ${id}`)}
+              onClick={() => console.log(`โต๊ะ ${table.id}`)}
             >
-              {id}
+              {table.id}
             </button>
           </div>
         ))}

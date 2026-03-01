@@ -1,6 +1,6 @@
 import { useState, type FC } from "react";
 import "./AllFood.css";
-import { catagoryTypeFood, foodsData } from "../../types/foodData";
+import { catagoryTypeFood, foodsData } from "../../Data/foodData";
 import CardComponent from "../../Components/CardComponent/CardComponent";
 import DropdownComponent from "../../Components/DropdownComponent/DropdownComponent";
 import type { TypeProps } from "../../types";

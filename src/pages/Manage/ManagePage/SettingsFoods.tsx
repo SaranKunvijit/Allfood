@@ -1,7 +1,7 @@
-import { ImagePlus, Package, Pizza } from "lucide-react";
+import { ImagePlus, Package } from "lucide-react";
 import "../ManagePage/SettingsPageCss/SettingsFoods.css";
 import { useState, type ChangeEvent } from "react";
-import { catagoryTypeFood, foodsData } from "../../../types/foodData";
+import { catagoryTypeFood, foodsData } from "../../../Data/foodData";
 import TableComponent from "../../../Components/TableComponent/TableComponent";
 import DialogComponent from "../../../Components/DialogComponent/DialogComponent";
 import DropdownComponent from "../../../Components/DropdownComponent/DropdownComponent";

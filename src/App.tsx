@@ -7,9 +7,10 @@ import SildeBarComponent from "./Components/SildeBarComponent/SildeBarComponent"
 import { useState, type FC } from "react"
 import Settings from "./pages/Manage/Settings"
 import type { ItemsProps } from "./types"
+import { NumTable } from "./Data/tableType"
 
 const App: FC = () => {   // ✅ แก้ตรงนี้
-  const [tableTotal, setTableTotal] = useState(0)
+  const [tableTotal, setTableTotal] = useState(NumTable.length)
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItem, setCartItem] = useState<ItemsProps[]>([]);
 
